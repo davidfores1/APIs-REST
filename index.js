@@ -20,6 +20,12 @@ app.post('/user', (req, res, next) => {
     db_manager.user_create(req, res, next)
 })
 
+//CRUD
+//R READ - GET
+app.get('/user', (req, res, next) => {
+    db_manager.user_details(req, res, next)
+})
+
 app.listen(8080, () => {
     console.log('API REST running in port 8080!')
 })

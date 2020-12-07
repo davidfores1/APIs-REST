@@ -22,3 +22,10 @@ exports.user_create = (req, res, next) => {
         res.send({ 'message': 'OK' });
     });
 }
+
+exports.user_details = function(req, res, next) {
+    User.findById(req.query.id, function(err, user) {
+        if (err) return next(err)
+        res.send(user)
+    })
+}
