@@ -26,6 +26,12 @@ app.get('/user', (req, res, next) => {
     db_manager.user_details(req, res, next)
 })
 
+//CRUD
+//U UPDATE - PUT/CATCH
+app.put('/user', (req, res, next) => {
+    db_manager.user_update(req, res, next)
+})
+
 app.listen(8080, () => {
     console.log('API REST running in port 8080!')
 })
